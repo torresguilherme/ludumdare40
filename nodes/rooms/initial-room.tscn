@@ -1,0 +1,339 @@
+[gd_scene load_steps=6 format=1]
+
+[ext_resource path="res://nodes/rooms/room-manager.gd" type="Script" id=1]
+[ext_resource path="res://nodes/scenario/wall0.tscn" type="PackedScene" id=2]
+[ext_resource path="res://nodes/scenario/pyre.tscn" type="PackedScene" id=3]
+[ext_resource path="res://nodes/scenario/spirit-font.tscn" type="PackedScene" id=4]
+[ext_resource path="res://nodes/rooms/room-camera.tscn" type="PackedScene" id=5]
+
+[node name="room0" type="Node2D"]
+
+script/script = ExtResource( 1 )
+
+[node name="walls" type="Node2D" parent="."]
+
+editor/display_folded = true
+
+[node name="wall3" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 160, 256 )
+
+[node name="wall4" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 192, 256 )
+
+[node name="wall5" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 224, 256 )
+
+[node name="wall6" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 256, 256 )
+
+[node name="wall47" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -96, -256 )
+
+[node name="wall50" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 96, -256 )
+
+[node name="wall51" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 128, -256 )
+
+[node name="wall52" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 160, -256 )
+
+[node name="wall53" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 192, -256 )
+
+[node name="wall54" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 224, -256 )
+
+[node name="wall55" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 256, -256 )
+
+[node name="wall59" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -64, -256 )
+
+[node name="wall60" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 64, -256 )
+
+[node name="wall61" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -256, -64 )
+
+[node name="wall62" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -256, 64 )
+
+[node name="wall63" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 256, 64 )
+
+[node name="wall64" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 256, -64 )
+
+[node name="wall65" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 64, 256 )
+
+[node name="wall66" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -64, 256 )
+
+[node name="wall8" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -96, 256 )
+
+[node name="wall47 2" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -128, -256 )
+
+[node name="wall9" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -128, 256 )
+
+[node name="wall47 3" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -160, -256 )
+
+[node name="wall10" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -160, 256 )
+
+[node name="wall47 4" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -192, -256 )
+
+[node name="wall11" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -192, 256 )
+
+[node name="wall47 5" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -224, -256 )
+
+[node name="wall12" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -224, 256 )
+
+[node name="wall47 6" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -256, -256 )
+
+[node name="wall13" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -256, 256 )
+
+[node name="wall25" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 256, 256 )
+
+[node name="wall26" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 256, 224 )
+
+[node name="wall46 4" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -256, 256 )
+
+[node name="wall27" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 256, 192 )
+
+[node name="wall46 5" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -256, 224 )
+
+[node name="wall28" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 256, 160 )
+
+[node name="wall46 6" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -256, 192 )
+
+[node name="wall29" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 256, 128 )
+
+[node name="wall46 7" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -256, 160 )
+
+[node name="wall30" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 256, 96 )
+
+[node name="wall46 8" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -256, 128 )
+
+[node name="wall46 9" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -256, 96 )
+
+[node name="wall36" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 256, -96 )
+
+[node name="wall37" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 256, -128 )
+
+[node name="wall46 15" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -256, -96 )
+
+[node name="wall38" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 256, -160 )
+
+[node name="wall46 16" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -256, -128 )
+
+[node name="wall39" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 256, -192 )
+
+[node name="wall46 17" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -256, -160 )
+
+[node name="wall40" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 256, -224 )
+
+[node name="wall46 18" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -256, -192 )
+
+[node name="wall41" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 256, -256 )
+
+[node name="wall46 19" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -256, -224 )
+
+[node name="wall46 20" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( -256, -256 )
+
+[node name="wall1" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 96, 256 )
+
+[node name="wall2" parent="walls" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 128, 256 )
+
+[node name="pyre" parent="walls" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( -192, 224 )
+
+[node name="pyre1" parent="walls" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( -160, 224 )
+
+[node name="pyre2" parent="walls" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( -192, 160 )
+
+[node name="pyre3" parent="walls" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 192, 160 )
+
+[node name="pyre4" parent="walls" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 192, 224 )
+
+[node name="pyre5" parent="walls" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 160, 224 )
+
+[node name="pyre6" parent="walls" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 192, -224 )
+
+[node name="pyre7" parent="walls" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 160, -224 )
+
+[node name="pyre8" parent="walls" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( -160, -224 )
+
+[node name="pyre9" parent="walls" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( -192, -224 )
+
+[node name="pyre10" parent="walls" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( -192, -160 )
+
+[node name="pyre11" parent="walls" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 192, -160 )
+
+[node name="pyre12" parent="walls" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 64, 224 )
+
+[node name="pyre13" parent="walls" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( -64, 224 )
+
+[node name="pyre14" parent="walls" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( -64, -224 )
+
+[node name="pyre15" parent="walls" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 64, -224 )
+
+[node name="enemies" type="Node2D" parent="."]
+
+[node name="positions" type="Node2D" parent="."]
+
+[node name="north" type="Position2D" parent="positions"]
+
+transform/pos = Vector2( 0, -256 )
+
+[node name="east" type="Position2D" parent="positions"]
+
+transform/pos = Vector2( 256, 0 )
+
+[node name="south" type="Position2D" parent="positions"]
+
+transform/pos = Vector2( 0, 256 )
+
+[node name="west" type="Position2D" parent="positions"]
+
+transform/pos = Vector2( -256, 0 )
+
+[node name="doors" type="Node2D" parent="."]
+
+[node name="loot" type="Node2D" parent="."]
+
+[node name="spirit-font" parent="loot" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -96, -128 )
+
+[node name="spirit-font1" parent="loot" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 128, 96 )
+
+[node name="Camera2D" parent="." instance=ExtResource( 5 )]
+
+

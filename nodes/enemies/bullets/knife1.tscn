@@ -1,0 +1,222 @@
+[gd_scene load_steps=11 format=1]
+
+[ext_resource path="res://nodes/enemies/bullets/knife1.gd" type="Script" id=1]
+[ext_resource path="res://sprites/knife1.png" type="Texture" id=2]
+[ext_resource path="res://sfx/knife-cancel.wav" type="Sample" id=3]
+[ext_resource path="res://sfx/knife-shot.wav" type="Sample" id=4]
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 2.75, -5.17278, 5.57619, 8.74881, -3.00705, 8.64414, -2.69303, -14.2794 )
+
+[sub_resource type="Animation" id=2]
+
+resource/name = "hit"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("blood:config/emitting")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:visibility/visible")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/imported = false
+tracks/2/keys = {
+"times": FloatArray( 0.9 ),
+"transitions": FloatArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+
+[sub_resource type="Animation" id=3]
+
+resource/name = "normal"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("rock:config/emitting")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:visibility/visible")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/imported = false
+tracks/2/keys = {
+"times": FloatArray( 0.9 ),
+"transitions": FloatArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+
+[sub_resource type="ColorRamp" id=4]
+
+offsets = FloatArray( 0, 0.982456 )
+colors = ColorArray( 0.746094, 0.746094, 0.746094, 1, 0.214844, 0.214844, 0.214844, 1 )
+
+[sub_resource type="ColorRamp" id=5]
+
+offsets = FloatArray( 0, 1 )
+colors = ColorArray( 0.828125, 0.122925, 0.122925, 1, 0.273438, 0.100403, 0.100403, 1 )
+
+[sub_resource type="SampleLibrary" id=7]
+
+samples/knife-cancel = {
+"db": -4.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 3 )
+}
+samples/knife-shot = {
+"db": -12.0,
+"pitch": 4.0,
+"priority": 0,
+"sample": ExtResource( 4 )
+}
+
+[node name="knife1" type="Area2D"]
+
+input/pickable = true
+shapes/0/shape = SubResource( 6 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+script/script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+
+texture = ExtResource( 2 )
+
+[node name="collider" type="CollisionPolygon2D" parent="."]
+
+build_mode = 0
+polygon = Vector2Array( -2.69303, -14.2794, -3.00705, 8.64414, 5.57619, 8.74881, 2.75, -5.17278 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="anim" type="AnimationPlayer" parent="."]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/hit = SubResource( 2 )
+anims/normal = SubResource( 3 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = ""
+
+[node name="rock" type="Particles2D" parent="."]
+
+config/amount = 48
+config/lifetime = 1.0
+config/emit_timeout = 1.0
+config/emitting = false
+config/process_mode = 1
+config/explosiveness = 0.1
+params/direction = 0.0
+params/spread = 20.0
+params/linear_velocity = 30.0
+params/spin_velocity = 0.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 0.0
+params/gravity_strength = 9.8
+params/radial_accel = 10.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 10.0
+params/final_size = 1.0
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+randomness/direction = 1.0
+randomness/spread = 1.0
+randomness/linear_velocity = 0.5
+color/color_ramp = SubResource( 4 )
+
+[node name="blood" type="Particles2D" parent="."]
+
+config/amount = 48
+config/lifetime = 1.0
+config/emit_timeout = 1.0
+config/emitting = false
+config/process_mode = 1
+config/explosiveness = 0.1
+params/direction = 0.0
+params/spread = 20.0
+params/linear_velocity = 30.0
+params/spin_velocity = 0.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 0.0
+params/gravity_strength = 9.8
+params/radial_accel = 10.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 10.0
+params/final_size = 1.0
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+randomness/direction = 1.0
+randomness/spread = 1.0
+randomness/linear_velocity = 0.5
+color/color_ramp = SubResource( 5 )
+
+[node name="sound" type="SamplePlayer2D" parent="."]
+
+params/volume_db = 0.0
+params/pitch_scale = 1.0
+params/attenuation/min_distance = 1.0
+params/attenuation/max_distance = 2048.0
+params/attenuation/distance_exp = 1.0
+config/polyphony = 1
+config/samples = SubResource( 7 )
+config/pitch_random = 0.0
+
+[connection signal="body_enter" from="." to="." method="_on_knife1_body_enter"]
+
+

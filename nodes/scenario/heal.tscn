@@ -1,0 +1,77 @@
+[gd_scene load_steps=4 format=1]
+
+[sub_resource type="CircleShape2D" id=2]
+
+custom_solver_bias = 0.0
+radius = 12.1015
+
+[sub_resource type="GDScript" id=3]
+
+script/source = "extends Area2D
+
+var value = 4
+
+func _ready():
+	# Called every time the node is added to the scene.
+	# Initialization here
+	pass
+
+
+func _on_heal_body_enter( body ):
+	if body.is_in_group(global.PLAYER_GROUP):
+		body.heal(value)
+		queue_free()
+"
+
+[sub_resource type="ColorRamp" id=1]
+
+offsets = FloatArray( 0, 0.163743, 0.274854, 0.403509, 0.649123 )
+colors = ColorArray( 0.0123901, 0.101914, 0.453125, 1, 0.0247192, 0.527344, 0.492003, 1, 0.212833, 0.888058, 0.840581, 1, 0.230469, 0.921875, 0.87326, 1, 1, 1, 1, 1 )
+
+[node name="heal" type="Area2D"]
+
+input/pickable = true
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+script/script = SubResource( 3 )
+
+[node name="Particles2D" type="Particles2D" parent="."]
+
+config/amount = 48
+config/lifetime = 2.0
+config/process_mode = 1
+params/direction = 0.0
+params/spread = 180.0
+params/linear_velocity = 40.0
+params/spin_velocity = 0.0
+params/orbit_velocity = 3.0
+params/gravity_direction = 0.0
+params/gravity_strength = 0.0
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 24.0
+params/final_size = 2.0
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+randomness/direction = 1.0
+randomness/spread = 1.0
+randomness/linear_velocity = 1.0
+color/color_ramp = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[connection signal="body_enter" from="." to="." method="_on_heal_body_enter"]
+
+

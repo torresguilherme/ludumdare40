@@ -1,0 +1,85 @@
+[gd_scene load_steps=5 format=1]
+
+[ext_resource path="res://sprites/black_screen.png" type="Texture" id=1]
+[ext_resource path="res://fonts/good-24.fnt" type="BitmapFont" id=2]
+[ext_resource path="res://fonts/good-16.fnt" type="BitmapFont" id=3]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends CanvasLayer
+
+func _ready():
+	set_process(true)
+	pass
+
+func _process(delta):
+	if Input.is_action_pressed(\"ui_select\") || Input.is_action_pressed(\"ui_accept\"):
+		global.first_scene()"
+
+[node name="credits" type="CanvasLayer"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+script/script = SubResource( 1 )
+
+[node name="TextureFrame" type="TextureFrame" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 40.0
+texture = ExtResource( 1 )
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 51.0
+margin/top = 170.0
+margin/right = 483.0
+margin/bottom = 194.0
+custom_fonts/font = ExtResource( 2 )
+text = "THANKS FOR PLAYING!"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Label 2" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 9.0
+margin/top = 244.0
+margin/right = 537.0
+margin/bottom = 469.0
+custom_fonts/font = ExtResource( 3 )
+text = "I hope you enjoyed playing
+Dream Roamers.
+
+All of the game's assets (code, 
+music, art) were made by me,
+Guilherme \"Jegus9\" Torres.
+
+If you liked, please support me
+in the Ludum Dare Compo, and
+check out the rest of my content!
+
+Soundcloud: soundcloud.com/jegus9
+Itch.io page: jegus9.itch.io/"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+
