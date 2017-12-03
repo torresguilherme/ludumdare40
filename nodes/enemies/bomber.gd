@@ -34,15 +34,16 @@ func _process(delta):
 				anim.set_current_animation("left")
 
 func take_damage(value):
-	hp -= value
-	if hp <= 0:
-		enabled = false
-		camera.screen_shake()
-		if randi() % 2 == 0:
-			drop_spirit_power()
-		else:
-			drop_heal()
-		damage_anim.play("death")
+	if enabled:
+		hp -= value
+		if hp <= 0:
+			enabled = false
+			camera.screen_shake()
+			if randi() % 2 == 0:
+				drop_spirit_power()
+			else:
+				drop_heal()
+			damage_anim.play("death")
 
 	else:
 		damage_anim.play("damage")
