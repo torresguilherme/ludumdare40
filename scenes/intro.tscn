@@ -4,7 +4,7 @@
 [ext_resource path="res://fonts/good-16.fnt" type="BitmapFont" id=2]
 [ext_resource path="res://music/ld0.ogg" type="AudioStream" id=3]
 
-[sub_resource type="GDScript" id=2]
+[sub_resource type="GDScript" id=1]
 
 script/source = "extends CanvasLayer
 
@@ -14,7 +14,7 @@ func _ready():
 func next():
 	global.move_forward_scene()"
 
-[sub_resource type="GDScript" id=1]
+[sub_resource type="GDScript" id=2]
 
 script/source = "extends Button
 
@@ -107,7 +107,7 @@ layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
-script/script = SubResource( 2 )
+script/script = SubResource( 1 )
 
 [node name="background" type="TextureFrame" parent="."]
 
@@ -139,7 +139,7 @@ enabled_focus_mode = 2
 shortcut = null
 text = "skip >>"
 flat = false
-script/script = SubResource( 1 )
+script/script = SubResource( 2 )
 
 [node name="up-label0" type="Label" parent="."]
 

@@ -44,9 +44,8 @@ func take_damage(value):
 			else:
 				drop_heal()
 			damage_anim.play("death")
-
-	else:
-		damage_anim.play("damage")
+		else:
+			damage_anim.play("damage")
 
 func drop_spirit_power():
 	var spirit_font = load("res://nodes/scenario/spirit-font.tscn")
