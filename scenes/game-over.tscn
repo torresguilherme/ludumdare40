@@ -115,7 +115,6 @@ script/script = SubResource( 3 )
 
 [node name="messages" type="Control" parent="."]
 
-editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -329,6 +328,45 @@ text = "Roses are red,
 violets are blue.
 Omae wa mou
 shindeiru."
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="info12" type="Label" parent="messages"]
+
+visibility/visible = false
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 13.0
+margin/top = 0.0
+margin/right = 477.0
+margin/bottom = 54.0
+custom_fonts/font = ExtResource( 3 )
+text = "Hmmm... maybe connecting
+the keyboard would work?"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="info13" type="Label" parent="messages"]
+
+visibility/visible = false
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 13.0
+margin/top = 0.0
+margin/right = 477.0
+margin/bottom = 54.0
+custom_fonts/font = ExtResource( 3 )
+text = "\"Pay $15 to have access
+to exclusive game over
+quotes!\" - EA Games"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0

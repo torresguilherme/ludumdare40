@@ -6,6 +6,7 @@ var speed = 300
 var inv_time = 1
 var inv_frames = 0
 var vulnerability_ratio = 8
+var enabled = true
 
 var spirit_power = 15
 var spirit_power_max = 60
@@ -42,50 +43,51 @@ func _ready():
 	set_process(true)
 
 func _process(delta):
-	# movement
-	if Input.is_action_pressed("move_up"):
-		up = -1
-	else:
-		up = 0
-	if Input.is_action_pressed("move_down"):
-		down = 1
-	else:
-		down = 0
-	if Input.is_action_pressed("move_left"):
-		left = -1
-	else:
-		left = 0
-	if Input.is_action_pressed("move_right"):
-		right = 1
-	else:
-		right = 0
-	
-	# set animation
-	if (up + down) == -1:
-		anim.set_current_animation("up")
-	elif (up + down) == 1:
-		anim.set_current_animation("down")
-	if (left + right) == -1:
-		anim.set_current_animation("left")
-	elif (left + right) == 1:
-		anim.set_current_animation("right")
-	
-	# update position
-	move(Vector2(left + right, 0) * speed * delta)
-	move(Vector2(0, up + down) * speed * delta)
-	
-	#update inv frames
-	if inv_frames > 0:
-		inv_frames -= delta
-	
-	# update cooldown
-	if cooldown > 0:
-		cooldown -= delta
-	
-	# shoot
-	if Input.is_action_pressed("shoot") && cooldown <= 0 && spirit_power > 0:
-		shoot()
-		cooldown = shot_interval
+	if enabled:
+		# movement
+		if Input.is_action_pressed("move_up"):
+			up = -1
+		else:
+			up = 0
+		if Input.is_action_pressed("move_down"):
+			down = 1
+		else:
+			down = 0
+		if Input.is_action_pressed("move_left"):
+			left = -1
+		else:
+			left = 0
+		if Input.is_action_pressed("move_right"):
+			right = 1
+		else:
+			right = 0
+		
+		# set animation
+		if (up + down) == -1:
+			anim.set_current_animation("up")
+		elif (up + down) == 1:
+			anim.set_current_animation("down")
+		if (left + right) == -1:
+			anim.set_current_animation("left")
+		elif (left + right) == 1:
+			anim.set_current_animation("right")
+		
+		# update position
+		move(Vector2(left + right, 0) * speed * delta)
+		move(Vector2(0, up + down) * speed * delta)
+		
+		#update inv frames
+		if inv_frames > 0:
+			inv_frames -= delta
+		
+		# update cooldown
+		if cooldown > 0:
+			cooldown -= delta
+		
+		# shoot
+		if Input.is_action_pressed("shoot") && cooldown <= 0 && spirit_power > 0:
+			shoot()
+			cooldown = shot_interval
 
 func shoot():
 	var dir = get_global_mouse_pos() - get_global_pos()

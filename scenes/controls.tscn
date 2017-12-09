@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://sprites/black_screen.png" type="Texture" id=1]
 [ext_resource path="res://fonts/good-24.fnt" type="BitmapFont" id=2]
 [ext_resource path="res://fonts/good-16.fnt" type="BitmapFont" id=3]
+[ext_resource path="res://nodes/ui/skip-button.tscn" type="PackedScene" id=4]
 
 [sub_resource type="GDScript" id=1]
 
@@ -87,5 +88,7 @@ the portal room."
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+
+[node name="skip-button" parent="." instance=ExtResource( 4 )]
 
 

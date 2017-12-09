@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var speed = 180
+var speed = 150
 var hp = 4
 var enabled = true
 

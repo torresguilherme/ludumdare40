@@ -7,7 +7,7 @@ var enabled = true
 var shot_interval = 1.5
 var cooldown = 0
 var direction
-var shot_speeds = [300, 250, 200]
+var shot_speeds = [350, 300, 250]
 
 #onready
 var player
@@ -52,7 +52,7 @@ func _process(delta):
 			cooldown = shot_interval
 
 func shoot1(direction):
-	# s_points.set_rot(get_angle_to(get_global_pos() + direction))
+	s_points.set_rot(get_angle_to(get_global_pos() - direction))
 	var new = []
 	for i in range(shot_speeds.size()):
 		new.append(bullet1.instance())

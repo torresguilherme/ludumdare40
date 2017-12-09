@@ -1,8 +1,9 @@
 [gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://sprites/black_screen.png" type="Texture" id=1]
-[ext_resource path="res://fonts/good-16.fnt" type="BitmapFont" id=2]
-[ext_resource path="res://music/ld0.ogg" type="AudioStream" id=3]
+[ext_resource path="res://nodes/ui/skip-button.tscn" type="PackedScene" id=2]
+[ext_resource path="res://fonts/good-16.fnt" type="BitmapFont" id=3]
+[ext_resource path="res://music/ld0.ogg" type="AudioStream" id=4]
 
 [sub_resource type="GDScript" id=1]
 
@@ -13,24 +14,6 @@ func _ready():
 
 func next():
 	global.move_forward_scene()"
-
-[sub_resource type="GDScript" id=2]
-
-script/source = "extends Button
-
-# class member variables go here, for example:
-# var a = 2
-# var b = \"textvar\"
-
-func _ready():
-	# Called every time the node is added to the scene.
-	# Initialization here
-	pass
-
-
-func _on_skipbutton_toggled( pressed ):
-	global.move_forward_scene()
-"
 
 [sub_resource type="Animation" id=3]
 
@@ -122,24 +105,7 @@ margin/bottom = 40.0
 texture = ExtResource( 1 )
 stretch_mode = 0
 
-[node name="skip-button" type="Button" parent="."]
-
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 398.0
-margin/top = 592.0
-margin/right = 522.0
-margin/bottom = 614.0
-custom_fonts/font = ExtResource( 2 )
-toggle_mode = true
-click_on_press = true
-enabled_focus_mode = 2
-shortcut = null
-text = "skip >>"
-flat = false
-script/script = SubResource( 2 )
+[node name="skip-button" parent="." instance=ExtResource( 2 )]
 
 [node name="up-label0" type="Label" parent="."]
 
@@ -152,7 +118,7 @@ margin/left = 2.0
 margin/top = 30.0
 margin/right = 690.0
 margin/bottom = 141.0
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 3 )
 text = "For many centuries, parasites that
 steal their victims' spirit energy 
 through their dreams have been 
@@ -174,7 +140,7 @@ margin/left = 2.0
 margin/top = 30.0
 margin/right = 690.0
 margin/bottom = 141.0
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 3 )
 text = "Id is a young Lucid Dreamer, the
 only one in his village, which was
 dominated by Dream Roamers.
@@ -197,7 +163,7 @@ margin/left = 3.0
 margin/top = 198.0
 margin/right = 499.0
 margin/bottom = 309.0
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 3 )
 text = "Victims of a Dream Roamer find
 themselves stuck in a terrible
 nightmare that could probably
@@ -220,7 +186,7 @@ margin/left = 3.0
 margin/top = 198.0
 margin/right = 499.0
 margin/bottom = 309.0
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 3 )
 text = "Now Id, in an out-of-body
 state, must find the portals
 in the maze that will lead him
@@ -240,7 +206,7 @@ margin/left = 2.0
 margin/top = 372.0
 margin/right = 594.0
 margin/bottom = 483.0
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 3 )
 text = "But even Lucid Dreamers have
 trouble with the Roamers. They
 find themselves in a dangerous
@@ -254,7 +220,7 @@ max_lines_visible = -1
 
 [node name="intro-song" type="StreamPlayer" parent="."]
 
-stream/stream = ExtResource( 3 )
+stream/stream = ExtResource( 4 )
 stream/play = false
 stream/loop = false
 stream/volume_db = 0.0
@@ -273,7 +239,5 @@ playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
 autoplay = "def"
-
-[connection signal="toggled" from="skip-button" to="skip-button" method="_on_skipbutton_toggled"]
 
 

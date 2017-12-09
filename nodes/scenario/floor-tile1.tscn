@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=1]
+
+[ext_resource path="res://sprites/floor-tile.png" type="Texture" id=1]
+
+[node name="floor-tile1" type="Sprite"]
+
+transform/pos = Vector2( 8160, 8160 )
+z/z = -10
+texture = ExtResource( 1 )
+region = true
+region_rect = Rect2( 0, 0, 16320, 16320 )
+
+
